@@ -1,0 +1,885 @@
+.form {
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-s {
+  opacity: 0.7;
+  font-family: Calibri;
+  font-weight: bold;
+  text-indent: 0.1em;
+  border: 0;
+  width: 100%;
+}
+.input-searchSubmit {
+  cursor: pointer;
+  border: 0;
+  box-sizing: content-box;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png");
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+#formForSearchAndSingle form {
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  margin: 1em;
+  max-width: 50%;
+  width: 50%;
+  padding: 0;
+  font-size: 1em;
+}
+#formForSearchAndSingle form input#s {
+  opacity: 0.7;
+  font-family: Calibri;
+  font-weight: bold;
+  text-indent: 0.1em;
+  border: 0;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+#formForSearchAndSingle form input#searchsubmit {
+  cursor: pointer;
+  border: 0;
+  box-sizing: content-box;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png");
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  width: 41px;
+  height: 41px;
+  min-width: 41px;
+  padding: 0;
+}
+.fluid-width-video-wrapper {
+  height: calc((9 / 16) * 100vw);
+  max-height: calc(100vh - 169px);
+  min-height: 480px;
+}
+iframe {
+  max-height: 100vh;
+}
+body {
+  margin: 0;
+}
+body > div#qLtempOverlay {
+  display: none;
+}
+#preload {
+  display: none;
+}
+img#logo {
+  width: 100px;
+  height: 91px;
+  opacity: 0.9;
+  display: block;
+}
+@media only screen and (max-width: 536px) {
+  img#logo {
+    display: none;
+  }
+}
+.uvodnik {
+  font-family: Pacifico;
+  font-weight: normal;
+  margin: 0;
+  color: #c3c3c3;
+}
+.uvodnik::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  font-weight: 900;
+  padding: 0 0.5em;
+}
+.targetBlank::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f381" "	" "\f35d";
+  font-weight: 900;
+  padding: 0 0.5em;
+}
+#search-div-single {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#search-div-single form {
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  margin: 1em;
+  max-width: 50%;
+  width: 50%;
+  padding: 0;
+  font-size: 1em;
+}
+#search-div-single form input#s {
+  opacity: 0.7;
+  font-family: Calibri;
+  font-weight: bold;
+  text-indent: 0.1em;
+  border: 0;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+#search-div-single form input#searchsubmit {
+  cursor: pointer;
+  border: 0;
+  box-sizing: content-box;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png");
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  width: 41px;
+  height: 41px;
+  min-width: 41px;
+  padding: 0;
+}
+#content {
+  position: relative;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#content #search-div {
+  width: 100%;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#content #search-div form {
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  margin: 1em;
+  max-width: 50%;
+  width: 50%;
+  padding: 0;
+  font-size: 1em;
+}
+#content #search-div form input#s {
+  opacity: 0.7;
+  font-family: Calibri;
+  font-weight: bold;
+  text-indent: 0.1em;
+  border: 0;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+#content #search-div form input#searchsubmit {
+  cursor: pointer;
+  border: 0;
+  box-sizing: content-box;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png");
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  width: 41px;
+  height: 41px;
+  min-width: 41px;
+  padding: 0;
+}
+#content .post {
+  width: min-content;
+  margin: 1em;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+#content .post a {
+  text-decoration: none;
+  font-family: Roboto;
+}
+#content .post a h3,
+#content .post a h4 {
+  margin: 0;
+  padding-left: 0.2em;
+}
+#content .post a h3 p,
+#content .post a h4 p {
+  margin-top: 0.2em;
+  margin-bottom: 0.6em;
+}
+#content .post a h3 {
+  color: #000000;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+}
+#content .post a h4 {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+#content .footer_post {
+  width: 100%;
+  max-width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+}
+#content .footer_post a {
+  font-family: 'Patrick Hand';
+  text-decoration: underline;
+  font-size: 1.3em;
+  color: white;
+}
+#content .footer_post ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#content .footer_post ul li::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  font-weight: 900;
+  padding: 0 0.5em;
+}
+#content .footer_post ul li:last-child::after {
+  content: "";
+}
+#content .footer_post ul li a {
+  text-transform: uppercase;
+}
+#content .footer_post span.alert {
+  font-family: Pacifico;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+}
+#content .footer_post span.alert h2 {
+  margin: 0;
+}
+#content #error {
+  padding: 70px 55px;
+  background: #f7f7f7;
+  color: red;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0 0 0.5em 0.5em;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+#content #success {
+  padding: 70px 55px;
+  background: #f7f7f7;
+  color: red;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0 0 0.5em 0.5em;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/cave.jpg");
+}
+.section #header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 0.3em;
+  padding-bottom: 3em;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+@media only screen and (max-width: 580px) {
+  .section #header {
+    justify-content: center;
+  }
+}
+.section #header a {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5em;
+  padding-right: 0.4em;
+  color: white;
+}
+.section #header #left {
+  text-align: left;
+  width: fit-content;
+  margin-left: 1em;
+}
+.section #header #right {
+  width: fit-content;
+  text-align: right;
+  margin-right: 0.6em;
+  margin-left: 1em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section #search-div {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.section form {
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 0em;
+  max-width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 536px) {
+  .section form {
+    margin-left: 0;
+  }
+}
+.section form input#s {
+  opacity: 0.7;
+  font-family: Calibri;
+  font-weight: bold;
+  text-indent: 0.1em;
+  border: 0;
+  width: 100%;
+  max-height: 3em;
+  height: 2em;
+  font-size: 2em;
+  max-width: 100%;
+}
+.section form input#searchsubmit {
+  cursor: pointer;
+  border: 0;
+  box-sizing: content-box;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png");
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  padding: 1px 0;
+}
+.hidden {
+  opacity: 0;
+  transition: all 0.5s;
+}
+#video-container {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s ease-in-out 0.3s;
+  opacity: 0;
+  background-color: black;
+}
+#color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all 0.5s;
+}
+.button-overlay {
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/play.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  width: fit-content;
+  height: 118px;
+}
+.button-overlay img {
+  opacity: 1;
+  transition: all 0.5s;
+  width: 210px;
+  height: 118px;
+}
+.button-overlay img:hover {
+  opacity: 0.5;
+}
+#video {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+}
+#video-controls {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button:focus {
+  outline: none;
+}
+button#play-pause,
+button#mute,
+button#cross {
+  transition: all 0.5s 0.2s;
+  background-size: cover;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-family: Calibri;
+  padding: 0;
+  cursor: pointer;
+}
+button#play-pause {
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/play.png");
+  height: 120px;
+  width: 120px;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+}
+button#mute {
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/turnoff.png");
+  height: 80px;
+  width: 80px;
+  margin-left: 0.2em;
+}
+button#cross {
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/cross.png");
+  height: 80px;
+  width: 80px;
+  margin-right: 0.2em;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2em 0em;
+}
+#footer h3 {
+  margin-top: 0;
+}
+#footer .gallery-cell-link {
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.5s;
+  box-sizing: border-box;
+}
+#footer .gallery-cell-link a {
+  font-family: Robotico;
+  font-weight: bold;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  padding: 0 0.5em;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+#footer .gallery-cell-link:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid white;
+}
+#footer .gallery-cell {
+  width: 210px;
+  height: 118px;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+}
+#footer .gallery-cell a {
+  text-decoration: none;
+  color: white;
+}
+#footer .gallery-cell a .new-post {
+  background-repeat: no-repeat;
+  background-size: 210px;
+  background-position: center;
+  width: 210px;
+  max-width: 210px;
+  height: 118px;
+  max-height: 118px;
+  text-align: center;
+}
+#footer .gallery-cell a .new-post .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 118px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+#footer .gallery-cell a .new-post:hover .title {
+  opacity: 1;
+}
+#info_form {
+  position: fixed;
+  top: -9999px;
+  opacity: 0;
+  margin: 0 auto;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ----------------------------------------------------------------------------------- */
+.homepage {
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/01/fullkostel.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #191919 !important;
+  width: 100%;
+  height: 100vh;
+}
+.homepageArticle {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.homepageArticle a {
+  text-decoration: none;
+  color: white;
+}
+.homepageArticle header {
+  margin: 0 auto;
+  text-align: center;
+  align-self: center;
+  text-transform: uppercase;
+  font-family: "Raleway", "Karla", Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 900;
+  font-size: 2em;
+}
+.homepageArticle header h1 {
+  margin-block-end: 0;
+}
+.homepageArticle header h3 {
+  margin-block-start: 0.3em;
+}
+.homepageArticle menu {
+  max-width: 100%;
+  padding: 0;
+  /*background-color: rgba(0,0,0,.4);*/
+  margin-top: 0;
+  color: white;
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.homepageArticle menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+.homepageArticle menu ul.submenu {
+  flex-direction: column;
+  line-height: 1.5em;
+  background-color: #191919;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  padding: 3em 1em;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  transition: all 0.5s;
+  box-sizing: border-box;
+}
+.homepageArticle menu ul li {
+  margin: 0 0.5em;
+}
+.homepageArticle footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /*background-color: rgba(0,0,0,.3);*/
+  text-transform: uppercase;
+  color: white;
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  padding: 1em 0;
+}
+.homepageArticle footer ul {
+  list-style: none;
+  padding: 0 1.5em;
+  margin: 0 1.5em;
+  border-right: 0.1em white solid;
+  border-left: 0.1em white solid;
+  line-height: 1.7em;
+}
+.homepageArticle footer .contact-link,
+.homepageArticle footer .message-link {
+  font-weight: 800;
+}
+article.messages,
+article.contact {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  background-color: rgba(230, 230, 230, 0.9);
+}
+article.messages header,
+article.contact header {
+  width: 100%;
+  text-align: center;
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+article.messages {
+  flex-direction: row;
+}
+article.messages menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: none;
+  background-color: #191919;
+  color: white;
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  z-index: 9999;
+}
+article.messages menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+article.messages menu ul li {
+  margin: 0 0.5em;
+}
+article.messages section {
+  text-align: center;
+}
+article.messages section h3 {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+article.messages section:nth-child(2) {
+  max-width: 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+article.messages section:last-child {
+  max-width: 40%;
+  width: 40%;
+}
+article.messages section ul {
+  text-align: left;
+  list-style-type: none;
+  line-height: 1.5em;
+  padding: 0;
+}
+article.messages section div {
+  text-align: left;
+  border-left: 0.05em solid black;
+  padding-left: 1em;
+}
+article.messages section div h4 {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+article.contact {
+  flex-direction: column;
+  height: auto;
+  background-color: rgba(230, 230, 230, 0.4);
+}
+article.contact section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0.5em 0 0.5em 0;
+}
+article.contact section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2em;
+}
+article.contact section div.wpcf7-display-none {
+  display: none;
+}
+article.contact section div h3 {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
+}
+article.contact section div h4 {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  margin-top: 0.8em;
+}
+article.contact section div img {
+  border-radius: 75px;
+}
+article.contact footer {
+  background-color: #191919;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+article.contact footer div {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+article.contact footer div h3,
+article.contact footer div h4 {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+}
+article.contact footer div ul {
+  list-style-type: none;
+  padding: 0;
+}
+article.contact footer div dl dt {
+  margin: 0.5em 0;
+}
+article.contact footer div dl dd {
+  margin-bottom: 0.3em;
+}
+.today {
+  font-weight: 800;
+}
+.today::before,
+.today::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+}
+.today::after {
+  padding: 0 0 0 0.3em;
+  content: "\f0d9";
+}
+.today::before {
+  padding: 0 0.3em 0 0;
+  content: "\f0da";
+}
+.list {
+  cursor: pointer;
+}
+.list::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding: 0 0 0 0.4em;
+  color: white;
+  content: "\f0d7";
+}
+.smooth-scroll {
+  cursor: pointer;
+}
+.smooth-scroll::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding: 0 0.4em 0 0;
+  color: white;
+  content: "\f0d7";
+}
+.smooth-scroll::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding: 0 0 0 0.4em;
+  color: white;
+  content: "\f0d7";
+}
+.smooth-scroll-up {
+  cursor: pointer;
+}
+.smooth-scroll-up::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding: 0 0.4em 0 0;
+  color: white;
+  content: "\f0d8";
+}
+.smooth-scroll-up::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding: 0 0 0 0.4em;
+  color: white;
+  content: "\f0d8";
+}
+.wpcf7-textarea {
+  width: 268px;
+}
+.close {
+  font-size: 1.5em;
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  cursor: pointer;
+}
+.close:hover {
+  color: red;
+}
+.close:hover::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+  padding: 0;
+  content: "\f101";
+}
+.close::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding: 0;
+  content: "\f00d";
+}
