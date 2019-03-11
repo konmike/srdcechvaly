@@ -1,0 +1,170 @@
+@img: "http://musicforyou.cekuj.net/wp-content/uploads";
+
+.font-awesome(@c:white, @p, @content){
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: @c;
+  padding: @p;
+  content: @content;
+}
+
+.display-flex-row(@wrap:wrap, @j-c:center, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: @wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+.display-flex-column(@j-c, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+@desktop:   ~"only screen and (min-width: 60em)";
+@tablet:    ~"only screen and (min-width: 45.625em) and (max-width: 59.938em)";
+@mobile:    ~"only screen and (max-width: 45.563em)";
+@smallest:    ~"only screen and (max-width: 25em)";
+
+main{
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("@{img}/2019/03/cave-1920-1280.jpg");
+  height: 100vh;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+article{
+  width: 100%;
+  max-width: 100%;
+
+  &:last-child{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
+
+form{
+  margin: 0 1rem;
+  max-width: 100%;
+  //box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  border-bottom: 1px solid white;
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input#s{
+    &::placeholder{
+      color: white;
+    }
+
+    &:focus{
+      outline: none;
+    }
+    //opacity: 0.7;
+    background-color: transparent;
+    font-family: Helvetica, Calibri, sans-serif;
+    font-weight: bold;
+    text-indent: 0.1rem;
+    border: 0;
+    width: 100%;
+    max-height: 3rem;
+    height: 2rem;
+    font-size: 2rem;
+    max-width: 100%;
+    color: white;
+  }
+
+  input#searchsubmit{
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    padding: 1px 0;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    box-sizing: content-box;
+    background-image: url("@{img}/2019/03/searchicon-white.png");
+    background-size: 60% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    //background-color: rgba(255, 255, 255, 1);
+  }
+}
+
+aside{
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  & ul{
+    padding-left: 1rem;
+
+    & li{
+      display: block;
+      list-style-type: none;
+      margin: 1rem 0;
+      width: fit-content;
+      font-family: Helvetica, sans-serif;
+
+      &:first-child{
+        display: block;
+        color: white;
+        font-family: Helvetica, Arial,sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      &.close-last-subtitles{
+        &:after{
+          .font-awesome(#c3c3c3, 0 0 0 .5rem, "\f102")
+        }
+      }
+
+      &.open-last-subtitles{
+        &:after{
+          .font-awesome(#c3c3c3, 0 0 0 .5rem, "\f103")
+        }
+      }
+      
+      & a{
+        color: #000;
+        background-color: white;
+        text-decoration: none;
+      }
+
+      & div{
+        .display-flex-column(stretch);
+      }
+
+      & p{
+        width: fit-content;
+        margin: 0;
+        color: white;
+        background-color: black;
+        & a{
+          color: white;
+          background-color: transparent;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-family: Helvetica, Calibri, sans-serif;
+          font-weight: bold;
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+}

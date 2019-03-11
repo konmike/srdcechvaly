@@ -1,0 +1,89 @@
+@img: "http://farbru.cekuj.net/wp-content/uploads";
+
+.font-awesome(@c:white, @p, @content){
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: @c;
+  padding: @p;
+  content: @content;
+}
+
+.display-flex-row(@wrap:wrap, @j-c:center, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: @wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+.display-flex-column(@j-c, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+.position-absolute-tr(@t,@r) {
+  position: absolute;
+  top: @t;
+  right: @r;
+}
+
+.position-absolute-tl(@t,@l) {
+  position: absolute;
+  top: @t;
+  left: @l;
+}
+
+.position-fixed(@t,@l) {
+  position: fixed;
+  top: @t;
+  left: @l;
+}
+
+@desktop:   ~"only screen and (min-width: 60em)";
+@tablet:    ~"only screen and (min-width: 45.625em) and (max-width: 59.938em)";
+@mobile:    ~"only screen and (max-width: 45.563em)";
+@smallest:    ~"only screen and (max-width: 25em)";
+
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.uvodnik {
+  font-family: Pacifico, sans-serif;
+  font-weight: normal;
+  margin: 0;
+  color: #c3c3c3;
+}
+
+.uvodnik::after {
+  .font-awesome(inherit, 0 0.5rem, "\f101");
+}
+
+header{
+  .display-flex-row(nowrap, flex-end, center);
+  height: max-content;
+  margin-right: 1rem;
+
+  a{
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  @media @smallest{
+    padding: 1rem;
+    margin-right: 0;
+
+    h1{
+      display: none;
+    }
+  }
+}
