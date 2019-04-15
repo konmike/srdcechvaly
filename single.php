@@ -53,13 +53,19 @@ else
 ?>
 
 <?php get_header(); ?>
-<div id="content">
-	<div id="search-div-single">
+<section id="single">
+	<header>
 		<?php get_search_form(); ?>
-	</div>
+        <a href="http://musicforyou.cekuj.net/interpreti">Interpreti</a>
+        <a href="http://musicforyou.cekuj.net/zanry">Žánry</a>
+    </header>
 
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
+			<article>
+            <h1>
+                <?php the_title(); ?>
+            </h1>
 
 			<?php 
 				the_content();
@@ -87,93 +93,81 @@ else
 									'numberposts' => '-1']);
 			?>
 			<?php if ($posts) { ?>
-			<div class="footer_post">
+			<footer>
 				<ul>
 				<?php 
 					
 					foreach ($categories as $cat) {
-						//echo "(" . $cat->cat_ID . ")";
 						$parentName = get_cat_name($cat->parent);
-						if($parentName != "Žánry")
-							echo '<li><a href="'.get_category_link( $cat->cat_ID ).'">'.$cat->name.'</a></li>';
+						echo '<li><a href="'.get_category_link( $cat->cat_ID ).'" title="Další titulky">'.$cat->name.'</a></li>';
 					}
 				?>
 				</ul>
+                <ul>
+	                <?php
+	                $posttags = get_the_tags();
+	                if ($posttags) {
 
-				<span class="alert">
-				<h2>Nedostupné video?</h2>
-				<span id="alert_button">Pošli mi upozornění</span>
-				</span>
+		                foreach ( $posttags as $tag ) {
+			                $descrip = tag_description($tag->term_id);
+			                echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="'. strip_tags($descrip) .'">' . $tag->name . '</a></li>';
+		                }
+	                }
 
-			</div>
+	                ?>
+                </ul>
 
-			<div class="other_videos">
-		    		<?php 
-		    			echo '<h3>' . $categories[1]->name . '</h3>';
-		    			foreach ($posts as $post) { 
-		    		?>
-		        	<?php 
-		        		setup_postdata($post); 
-		        	?>
+			</footer>
 
-				<div class="post">
-			        	<a href="<?php the_permalink(); ?>">
-							<div class="button-overlay">
-								<?php the_post_thumbnail(); ?>
-							</div>
-							<h3>
-								<?php the_title(); ?>
-							</h3>
-							<h4>
-								<?php the_excerpt(); ?>
-							</h4>
-						</a>
-				</div>
-		    		<?php } ?>
-		    </div>
+				<?php echo $response; ?>
+
+            </article>
+
 			<?php } ?>
 
-<div id="info_form">
- 
-<div id="respond">
-  
-  <form action="<?php the_permalink(); ?>" method="post">
-    <p>
-    	<label for="name">Jméno: <span>*</span> <br>
-    		<input type="text" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>">
-    	</label>
-    </p>
-    <p>
-    	<label for="message_title">Název videa: <span>*</span> <br>
-    		<input type="text" name="message_title" value="<?php echo wp_title(); ?>">
-    	</label>
-    </p>
-    <p>
-    	<label for="message_text">Message: <br>
-    		<textarea type="text" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?>
-    		</textarea>
-    	</label>
-    </p>
-    <p>
-    	<label for="message_human">Human Verification: <span>*</span> <br>
-    		<input type="text" style="width: 60px;" name="message_human">
-    		+ 3 = 5
-    	</label>
-    </p>
-    
-    <input type="hidden" name="submitted" value="1">
-    <p><input type="submit"></p>
-    <p><span id="close_button">Zrušit</span></p>
-  </form>
-</div>
-</div>
+        <span id="span-aside-form">Nechte mi vzkaz</span>
 
-<?php echo $response; ?>
+        <aside id="aside-form">
+
+          <h3>Váš vzkaz</h3>
+            <p>Našli jste nějakou chybu? Nefunkční odkaz, ?</p>
+
+          <form action="<?php the_permalink(); ?>" method="post" id="message-form">
+            <p>
+                <label for="name">Vaše jméno: <span>*</span> <br>
+                    <input type="text" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>">
+                </label>
+            </p>
+            <p>
+                <label for="message_title">Název článku: <span>*</span> <br>
+                    <input type="text" name="message_title" value="<?php echo wp_title(); ?>">
+                </label>
+            </p>
+            <p>
+                <label for="message_text">Zpráva: <br>
+                    <textarea name="message_text"><?php echo esc_textarea($_POST['message_text']); ?>
+                    </textarea>
+                </label>
+            </p>
+            <p>
+                <label for="message_human">Ochrana proti SPAMu: <span>*</span> <br>
+                    <input type="text" style="width: 60px;" name="message_human">
+                    + 3 = 5
+                </label>
+            </p>
+
+            <input type="hidden" name="submitted" value="1">
+            <p><input type="submit"></p>
+          </form>
+
+        </aside>
+
+
 
 		<?php wp_reset_postdata(); ?>
 
 		<?php endwhile; ?>
 	<?php endif; ?>
-</div>               
+</section>
 	
 <?php get_footer(); ?>

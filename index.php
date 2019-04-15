@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <main>
     <article>
         <header>
@@ -18,6 +17,7 @@
 			    <?php foreach ($posts as $post) { ?>
 				    <?php
 				    setup_postdata($post);
+				    $posttags = get_the_tags();
 				    ?>
                     <li>
                         <a href='<?php the_permalink();?>'>
@@ -25,7 +25,16 @@
                         </a>
                         <div>
 	                        <?php the_excerpt()?>
-	                        <?php the_tags( '<p>',' ', '</p>' ); ?>
+                            <?php
+                                if ($posttags) {
+
+	                                foreach ( $posttags as $tag ) {
+                                        $descrip = tag_description($tag->term_id);
+		                                echo '<p><a href="' . get_tag_link( $tag->term_id ) . '" title="'. strip_tags($descrip) .'">' . $tag->name . '</a></p>';
+	                                }
+                                }
+
+                            ?>
                         </div>
                     </li>
 

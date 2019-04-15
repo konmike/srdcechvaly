@@ -1,15 +1,17 @@
 <?php get_header(); ?>
-<div id="content">
-		<div id="search-div">
-			<!-- <img id="logo" src="http://musicforyou.cekuj.net/wp-content/uploads/2018/09/logo-ram.png" /> -->
+
+    <section id="search-result">
+		<header>
 			<?php get_search_form(); ?>
-		</div>
+            <a href="http://musicforyou.cekuj.net/interpreti">Interpreti</a>
+            <a href="http://musicforyou.cekuj.net/zanry">Žánry</a>
+		</header>
 
         <?php if (have_posts()) : ?>
 	    <?php while (have_posts()) : the_post(); ?>
 		<?php get_template_part('loop', 'single'); ?>
 	   	<?php endwhile; ?>
         <?php endif; ?>
+    </section>
 
-</div>
 <?php get_footer(); ?>

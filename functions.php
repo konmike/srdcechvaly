@@ -24,3 +24,13 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 210, 118 );
+
+function tag_posts($query)
+{
+	if ($query->is_tag || $query->is_search)
+	{
+		$query->set('posts_per_page', '-1' );
+		$query->set( 'orderby', array('title' => 'ASC') );
+	}
+}
+add_action('pre_get_posts', 'tag_posts');

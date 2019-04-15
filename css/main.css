@@ -1,24 +1,3 @@
-main {
-  background-color: #ffffff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/03/cave-1920-1280.jpg");
-  height: 100vh;
-  max-height: 100%;
-  width: 100%;
-  max-width: 100%;
-}
-article {
-  width: 100%;
-  max-width: 100%;
-}
-article:last-child {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-}
 form {
   margin: 0 1rem;
   max-width: 100%;
@@ -61,6 +40,257 @@ form input#searchsubmit {
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
+}
+section > header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 0;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+section > header > form {
+  margin: 0.5rem;
+  max-width: 50%;
+  width: 50%;
+  border: 1px solid #dfe1e5;
+  border-radius: 2rem;
+  text-align: center;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section > header > form:hover,
+section > header > form:active {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+section > header > form input#s {
+  opacity: 0.7;
+  background-color: transparent;
+  font-family: Helvetica, Calibri, sans-serif;
+  font-weight: bold;
+  text-indent: 1rem;
+  border: 0;
+  width: 100%;
+  line-height: 2.5rem;
+  max-width: 100%;
+  color: black;
+  font-size: 1rem;
+}
+section > header > form input#s::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+section > header > form input#s:focus {
+  outline: none;
+}
+section > header > form input#searchsubmit {
+  height: 45px;
+  min-width: 45px;
+  width: 45px;
+  padding: 1px 0;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  box-sizing: content-box;
+  background-image: url(http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png);
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section,
+#search-result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section header a,
+#search-result header a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+}
+section header a:hover,
+#search-result header a:hover {
+  color: black;
+  text-decoration: none;
+}
+section header a.active-link,
+#search-result header a.active-link {
+  color: black;
+  text-decoration: none;
+}
+section article,
+#search-result article {
+  text-align: center;
+  position: static;
+  display: block;
+  width: auto;
+  margin: 1rem;
+  padding: 0.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+section article a,
+#search-result article a {
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+}
+section article a:hover,
+#search-result article a:hover {
+  text-decoration: none;
+}
+section article h3,
+#search-result article h3,
+section article h4,
+#search-result article h4 {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Helvetica, sans-serif;
+}
+section article h3:hover,
+#search-result article h3:hover,
+section article h4:hover,
+#search-result article h4:hover {
+  color: black;
+}
+section article div p,
+#search-result article div p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+section article div p a,
+#search-result article div p a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+}
+section article div p a:hover,
+#search-result article div p a:hover {
+  color: black;
+}
+section article div p a:hover:after,
+#search-result article div p a:hover:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: #000000;
+  padding: 0.4rem;
+  content: "\f35d";
+}
+section article div p a::after,
+#search-result article div p a::after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0.4rem;
+  content: "\f35d";
+}
+section#single article {
+  box-shadow: none;
+}
+section#single article h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+section#single article footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+section#single article footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+section#single article footer ul li a {
+  background-color: #000000;
+  color: white;
+  font-weight: bold;
+  padding: 0.2rem;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+section#single article footer ul li a:hover {
+  color: red;
+}
+section#single article footer ul li + li {
+  margin-left: 0.5rem;
+}
+section#single span#span-aside-form {
+  position: absolute;
+  left: 0;
+  top: 8em;
+  background-color: #000000;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  padding: 0.5rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+  cursor: pointer;
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+section#single span#span-aside-form:hover {
+  color: red;
+}
+section#single aside#aside-form {
+  display: none;
+  background-color: #000000;
+  color: white;
+  height: 100%;
+}
+section#single aside#aside-form p,
+section#single aside#aside-form h3 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+section#single aside#aside-form form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  text-align: left;
+  border: 0;
+  font-family: Helvetica, sans-serif;
+}
+section#single aside#aside-form form p {
+  margin-bottom: 0;
+}
+section#single aside#aside-form form p label input,
+section#single aside#aside-form form p label textarea {
+  margin-top: 0.3rem;
+}
+main {
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/03/cave-1920-1280.jpg");
+  height: 100vh;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+article {
+  width: 100%;
+  max-width: 100%;
+}
+article:last-child {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 aside {
   position: absolute;
@@ -125,5 +355,88 @@ aside ul li p a {
   font-family: Helvetica, Calibri, sans-serif;
   font-weight: bold;
   font-size: 0.9rem;
+}
+section#tag article,
+section#category article,
+section#genre article,
+section#interpret article {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: none;
+}
+section#tag article h1,
+section#category article h1,
+section#genre article h1,
+section#interpret article h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+section#tag article p,
+section#category article p,
+section#genre article p,
+section#interpret article p {
+  text-align: center;
+}
+section#tag article ul,
+section#category article ul,
+section#genre article ul,
+section#interpret article ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+section#tag article ul.interpret-list,
+section#category article ul.interpret-list,
+section#genre article ul.interpret-list,
+section#interpret article ul.interpret-list,
+section#tag article ul.tags,
+section#category article ul.tags,
+section#genre article ul.tags,
+section#interpret article ul.tags {
+  margin-top: 1rem;
+}
+section#tag article ul.interpret-list li,
+section#category article ul.interpret-list li,
+section#genre article ul.interpret-list li,
+section#interpret article ul.interpret-list li,
+section#tag article ul.tags li,
+section#category article ul.tags li,
+section#genre article ul.tags li,
+section#interpret article ul.tags li {
+  line-height: 1.5rem;
+}
+section#tag article ul.interpret-list li a,
+section#category article ul.interpret-list li a,
+section#genre article ul.interpret-list li a,
+section#interpret article ul.interpret-list li a,
+section#tag article ul.tags li a,
+section#category article ul.tags li a,
+section#genre article ul.tags li a,
+section#interpret article ul.tags li a {
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+}
+section#tag article ul.interpret-list li a:hover,
+section#category article ul.interpret-list li a:hover,
+section#genre article ul.interpret-list li a:hover,
+section#interpret article ul.interpret-list li a:hover,
+section#tag article ul.tags li a:hover,
+section#category article ul.tags li a:hover,
+section#genre article ul.tags li a:hover,
+section#interpret article ul.tags li a:hover {
+  color: black;
+  text-decoration: none;
+}
+section#tag article ul.children,
+section#category article ul.children,
+section#genre article ul.children,
+section#interpret article ul.children {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
 }
 /*# sourceMappingURL=main.css.map */

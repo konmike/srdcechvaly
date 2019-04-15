@@ -23,5 +23,17 @@
 		}
 	});
 
+	$('#span-aside-form').click(function() {
+		if($('#aside-form').is(":visible"))
+			$(this).css('left', '0')
+		else
+			$(this).css('left', ($('#aside-form').width()))
+
+		$('#aside-form').slideToggle('slow');
+	});
+
+
+
+
 
 })( jQuery );

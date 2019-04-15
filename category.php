@@ -1,26 +1,31 @@
 <?php get_header(); ?>
-<div id="content">
-		<div id="search-div">
-			<!-- <img id="logo" src="http://musicforyou.cekuj.net/wp-content/uploads/2018/09/logo-ram.png" /> -->
+<section id="category">
+		<header>
 			<?php get_search_form(); ?>
-		</div>
+            <a href="http://musicforyou.cekuj.net/interpreti">Interpreti</a>
+            <a href="http://musicforyou.cekuj.net/zanry">Žánry</a>
+		</header>
 
+        <article>
         <?php
                 $category = get_category( get_query_var( 'cat' ) );
                 $posts = get_posts([
+                        'numberposts' => '-1',
                         'category' => $category->term_id,
-                        'numberposts' => '-1'
+                        'orderby' => 'title',
+                        'order' => "ASC",
                 ]);
 
-                echo '<h3>' . $category->name . '</h3>';
+                echo '<h1>' . $category->name . '</h1>';
                 echo '<ul>';
                 foreach ($posts as $post) {
-                        echo '<a href="' . get_the_permalink() . '">';
-                        echo '<li>' . the_title() . '</li>';
-                        echo '</a>';
+                        echo '<li><a href="' . get_the_permalink() . '">';
+                        echo the_title('<h4>', '</h4>') . '</a>';
+                        echo '</li>';
                 }
                 echo '</ul>';
         ?>
+        </article>
 
-</div>
+</section>
 <?php get_footer(); ?>
