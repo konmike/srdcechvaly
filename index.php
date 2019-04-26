@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <main>
-    <article>
+    <article id="home">
         <header>
             <h1 class="uvodnik">Jsi&nbsp;tu&nbsp;poprvé?</h1>
-            <a href="#" id="uvodnik">Úvodník</a>
+            <a href="#uvodnik" class="tlacitko">Úvodník</a>
         </header>
 
         <aside>
@@ -44,10 +44,39 @@
 		    <?php wp_reset_postdata(); ?>
 
         </aside>
+
+        <footer>
+	        <?php get_search_form(); ?>
+        </footer>
     </article>
 
-    <article>
-	    <?php get_search_form(); ?>
+    <article id="uvodnik">
+        <div>
+            <p>"Túžim sa vrátiť do srdca chvály<br>
+                kde si jedine Ty, jedine Ty Ježiš" <br>
+                <span>(Richard Čanaky, Hudba dohrává)</span></p>
+            <p>
+                Tento web slouží jako prodloužená ruka mého Youtube kanálu.<br>
+                Můžete si zde snadno najít titulky ke své oblíbené písni,<br>
+                stejně tak zde v přehledné podobě najdete seznam všech doposud<br>
+                vytvořených titulků dle jednotlivých <a href="http://srdcechvaly.cekuj.net/interpreti" title="Interpreti">interpretů</a> či <a href="http://srdcechvaly.cekuj.net/zanry" title="Žánry">žánrů</a>.
+            </p>
+        </div>
+        <footer>
+            <div>
+                <a href="https://www.youtube.com/c/srdcechvaly" title="Youtube - Srdce chvály">
+                    <img src="http://srdcechvaly.cekuj.net/wp-content/uploads/2019/04/channel.png" alt="Youtube">
+                    <h3>Youtube kanál</h3>
+                </a>
+            </div>
+            <div>
+                <a href="https://1drv.ms/f/s!AlC2uXdxwQQAhzi3uv_ykp9he49I" title="Titulky ke stažení">
+                    <img src="http://srdcechvaly.cekuj.net/wp-content/uploads/2019/04/subtitle.png" alt="Titulky">
+                    <h3>Titulky</h3>
+                </a>
+            </div>
+            <a href="#home" id="up" class="tlacitko"></a>
+        </footer>
     </article>
 </main>
 

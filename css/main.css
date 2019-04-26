@@ -133,6 +133,7 @@ section article,
   position: static;
   display: block;
   width: auto;
+  height: auto;
   margin: 1rem;
   padding: 0.5rem;
   color: rgba(0, 0, 0, 0.7);
@@ -162,8 +163,11 @@ section article h4:hover,
 section article div p,
 #search-result article div p {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
 }
 section article div p a,
 #search-result article div p a {
@@ -202,7 +206,9 @@ section#single article h1 {
 section#single article footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid black;
 }
 section#single article footer ul {
   margin-top: 0;
@@ -271,26 +277,98 @@ section#single aside#aside-form form p label input,
 section#single aside#aside-form form p label textarea {
   margin-top: 0.3rem;
 }
-main {
-  background-color: #ffffff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/03/cave-1920-1280.jpg");
+article {
   height: 100vh;
   max-height: 100%;
   width: 100%;
   max-width: 100%;
 }
-article {
-  width: 100%;
-  max-width: 100%;
+article:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/03/cave-1920-1280.jpg");
 }
-article:last-child {
-  position: absolute;
-  bottom: 0;
+article footer {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
+}
+article:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+}
+article:last-child div {
+  font-family: Indie Flower, cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 3rem 0 3rem;
+}
+article:last-child div p span {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  font-family: Helvetica, sans-serif;
+}
+article:last-child div p a {
+  color: #000;
+  transition: all 0.5s;
+}
+article:last-child div p a:hover {
+  text-decoration-color: red;
+}
+article:last-child footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+}
+article:last-child footer div img {
+  height: 100px;
+}
+article:last-child footer div a {
+  position: static;
+  text-decoration: underline;
+  color: #000;
+  margin: 0;
+  transition: all 0.5s;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+article:last-child footer div a:hover {
+  text-decoration-color: red;
+}
+article:last-child footer div a:after {
+  content: "";
+}
+article:last-child footer div h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+article:last-child footer a {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+  font-size: 3rem;
+  text-decoration: none;
+}
+article:last-child footer a:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: black;
+  padding: 0.5rem;
+  content: "\f139";
 }
 aside {
   position: absolute;

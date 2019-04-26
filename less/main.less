@@ -35,26 +35,112 @@
 @import "single";
 
 main{
-  background-color: #ffffff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("@{img}/2019/03/cave-1920-1280.jpg");
+
+}
+
+article{
   height: 100vh;
   max-height: 100%;
   width: 100%;
   max-width: 100%;
-}
 
-article{
-  width: 100%;
-  max-width: 100%;
+  &:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("@{img}/2019/03/cave-1920-1280.jpg");
+  }
 
-  &:last-child{
-    position: absolute;
-    bottom: 0;
+  & footer{
     display: flex;
     justify-content: center;
     margin: 1rem 0;
+  }
+
+  &:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+
+    & div{
+      font-family: Indie Flower, cursive, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 3rem 0 3rem;
+
+      & p{
+        & span{
+          font-size: 1rem;
+          font-weight: normal;
+          font-style: italic;
+          font-family: Helvetica, sans-serif;
+        }
+        & a{
+          color: #000;
+          transition: all .5s;
+        }
+        & a:hover{
+          text-decoration-color: red;
+        }
+      }
+    }
+
+    & footer{
+      & div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1rem;
+
+        & img{
+          height: 100px;
+        }
+
+        & a{
+          position: static;
+          text-decoration: underline;
+          color: #000;
+          margin: 0;
+          transition: all 0.5s;
+          font-size: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &:hover{
+            text-decoration-color: red;
+          }
+          &:after{
+            content: "";
+          }
+        }
+
+        & h3{
+          margin: 0;
+          font-size: 2rem;
+        }
+      }
+      & a {
+        position: fixed;
+        display: none;
+        bottom: 0;
+        right: 0;
+        margin: 2rem;
+        font-size: 3rem;
+        text-decoration: none;
+
+        &:after {
+          .font-awesome(black, .5rem, "\f139");
+        }
+      }
+    }
+
   }
 }
 
