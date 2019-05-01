@@ -27,9 +27,7 @@
 				while (have_posts()) : the_post();
 			?>
 				<li><a href="<?php the_permalink(); ?>">
-					<h4>
 						<?php the_title(); ?>
-					</h4>
 				</a></li>
 			<?php endwhile;?>
 			</ul>

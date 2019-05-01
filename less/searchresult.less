@@ -8,10 +8,14 @@ section, #search-result{
     & a{
       color: rgba(0,0,0,.7);
       text-decoration-color: rgba(0,0,0,.4);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-family: Helvetica, sans-serif;
+      transition: all .5s;
 
       &:hover{
         color: black;
-        text-decoration: none;
+        text-decoration: underline white;
       }
 
       &.active-link{
@@ -35,20 +39,26 @@ section, #search-result{
 
     & a{
       text-decoration-color: rgba(0,0,0,.4);
+      color: rgba(0,0,0,.7);
+      font-family: Helvetica, sans-serif;
+      font-weight: 800;
+      line-height: 2rem;
+      transition: all .5s;
 
       &:hover{
-        text-decoration: none;
+        color: black;
+        text-decoration: underline white;
       }
     }
 
-    & h3, h4{
+    /*& h3, h4{
       color: rgba(0,0,0,.7);
       font-family: Helvetica, sans-serif;
 
       &:hover{
         color: black;
       }
-    }
+    }*/
 
     & div{
 
@@ -65,6 +75,7 @@ section, #search-result{
           text-decoration-color: rgba(0,0,0,.4);
           font-weight: bold;
           font-family: Helvetica, sans-serif;
+          transition: all .5s;
 
           &:hover{
             color: black;
@@ -74,11 +85,11 @@ section, #search-result{
             }
           }
           &::after{
+            transition: all .5s;
             .font-awesome(rgba(0,0,0,.7), .4rem, "\f35d");
           }
         }
       }
     }
-
   }
 }

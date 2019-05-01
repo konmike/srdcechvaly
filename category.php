@@ -20,7 +20,7 @@
                 echo '<ul>';
                 foreach ($posts as $post) {
                         echo '<li><a href="' . get_the_permalink() . '">';
-                        echo the_title('<h4>', '</h4>') . '</a>';
+                        echo the_title() . '</a>';
                         echo '</li>';
                 }
                 echo '</ul>';

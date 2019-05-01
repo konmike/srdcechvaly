@@ -17,7 +17,8 @@ function themeslug_enqueue_script() {
     wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/css/main.css', false );
 //    wp_enqueue_style( 'flikcity', get_stylesheet_directory_uri() . '/css/flickity.css', false );
     wp_enqueue_style( 'load-fa', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css' );
-    // here you can enqueue more js / css files 
+	// here you can enqueue more js / css files
+	wp_enqueue_style( 'animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );

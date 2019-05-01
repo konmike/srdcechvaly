@@ -27,6 +27,7 @@ section#single{
             padding: .2rem;
             font-family: Helvetica, sans-serif;
             text-decoration: none;
+            transition: all .5s;
 
             &:hover{
               color: red;
@@ -40,37 +41,19 @@ section#single{
     }
   }
 
-  & span#span-aside-form{
+  & footer#contact-form{
+    background-color: rgba(0,0,0,1);
+    color: white;
+    width: 100%;
+    max-width: 100%;
     position: absolute;
+    bottom: 0;
     left: 0;
-    top: 8em;
-    background-color: rgba(0,0,0,1);
-    color: white;
-    font-family: Helvetica, sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    writing-mode: vertical-lr;
-    padding: .5rem;
-    border-radius: 0 .3rem .3rem 0;
-    cursor: pointer;
-    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
-    transition: all .5s;
-
-    &:hover{
-      color: red;
-    }
-  }
-
-  & aside#aside-form{
-    display: none;
-    background-color: rgba(0,0,0,1);
-    color: white;
-    height: 100%;
-
-    & p, & h3{
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
+    top: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 
     & form{
       margin: 0;
@@ -80,14 +63,46 @@ section#single{
       justify-content: stretch;
       text-align: left;
       border: 0;
+      width: min-content;
       font-family: Helvetica, sans-serif;
 
+      & div{
+        &.wpcf7-response-output,
+        &.wpcf7-display-none,
+        &.wpcf7-mail-sent-ok{
+          max-width: 100%;
+          margin: 1rem 0 1rem 0;
+        }
+      }
       & p{
-        margin-bottom: 0;
+        margin: .3rem 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
 
-        & label{
+        & input{
+          font-size: 1rem;
+          padding: .5rem;
+          font-family: Helvetica, sans-serif;
+          background-color: #fff;
+          border: none;
+          color: #333;
+        }
+
+        & span{
+          &.ajax-loader{
+            display: none;
+          }
+
           & input, & textarea{
-            margin-top: .3rem;
+            font-family: Helvetica, sans-serif;
+            font-size: 1rem;
+            border: 0;
+            padding: .5rem;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #fff;
           }
         }
       }

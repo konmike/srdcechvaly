@@ -116,11 +116,15 @@ section header a,
 #search-result header a {
   color: rgba(0, 0, 0, 0.7);
   text-decoration-color: rgba(0, 0, 0, 0.4);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  transition: all 0.5s;
 }
 section header a:hover,
 #search-result header a:hover {
   color: black;
-  text-decoration: none;
+  text-decoration: underline white;
 }
 section header a.active-link,
 #search-result header a.active-link {
@@ -138,27 +142,28 @@ section article,
   padding: 0.5rem;
   color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  /*& h3, h4{
+      color: rgba(0,0,0,.7);
+      font-family: Helvetica, sans-serif;
+
+      &:hover{
+        color: black;
+      }
+    }*/
 }
 section article a,
 #search-result article a {
   text-decoration-color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  line-height: 2rem;
+  transition: all 0.5s;
 }
 section article a:hover,
 #search-result article a:hover {
-  text-decoration: none;
-}
-section article h3,
-#search-result article h3,
-section article h4,
-#search-result article h4 {
-  color: rgba(0, 0, 0, 0.7);
-  font-family: Helvetica, sans-serif;
-}
-section article h3:hover,
-#search-result article h3:hover,
-section article h4:hover,
-#search-result article h4:hover {
   color: black;
+  text-decoration: underline white;
 }
 section article div p,
 #search-result article div p {
@@ -175,6 +180,7 @@ section article div p a,
   text-decoration-color: rgba(0, 0, 0, 0.4);
   font-weight: bold;
   font-family: Helvetica, sans-serif;
+  transition: all 0.5s;
 }
 section article div p a:hover,
 #search-result article div p a:hover {
@@ -190,6 +196,7 @@ section article div p a:hover:after,
 }
 section article div p a::after,
 #search-result article div p a::after {
+  transition: all 0.5s;
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: rgba(0, 0, 0, 0.7);
@@ -223,6 +230,7 @@ section#single article footer ul li a {
   padding: 0.2rem;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
+  transition: all 0.5s;
 }
 section#single article footer ul li a:hover {
   color: red;
@@ -230,37 +238,21 @@ section#single article footer ul li a:hover {
 section#single article footer ul li + li {
   margin-left: 0.5rem;
 }
-section#single span#span-aside-form {
+section#single footer#contact-form {
+  background-color: #000000;
+  color: white;
+  width: 100%;
+  max-width: 100%;
   position: absolute;
+  bottom: 0;
   left: 0;
-  top: 8em;
-  background-color: #000000;
-  color: white;
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  writing-mode: vertical-lr;
-  padding: 0.5rem;
-  border-radius: 0 0.3rem 0.3rem 0;
-  cursor: pointer;
-  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
-  transition: all 0.5s;
+  top: auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
-section#single span#span-aside-form:hover {
-  color: red;
-}
-section#single aside#aside-form {
-  display: none;
-  background-color: #000000;
-  color: white;
-  height: 100%;
-}
-section#single aside#aside-form p,
-section#single aside#aside-form h3 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-section#single aside#aside-form form {
+section#single footer#contact-form form {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -268,14 +260,42 @@ section#single aside#aside-form form {
   justify-content: stretch;
   text-align: left;
   border: 0;
+  width: min-content;
   font-family: Helvetica, sans-serif;
 }
-section#single aside#aside-form form p {
-  margin-bottom: 0;
+section#single footer#contact-form form div.wpcf7-response-output,
+section#single footer#contact-form form div.wpcf7-display-none,
+section#single footer#contact-form form div.wpcf7-mail-sent-ok {
+  max-width: 100%;
+  margin: 1rem 0 1rem 0;
 }
-section#single aside#aside-form form p label input,
-section#single aside#aside-form form p label textarea {
-  margin-top: 0.3rem;
+section#single footer#contact-form form p {
+  margin: 0.3rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+section#single footer#contact-form form p input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-family: Helvetica, sans-serif;
+  background-color: #fff;
+  border: none;
+  color: #333;
+}
+section#single footer#contact-form form p span.ajax-loader {
+  display: none;
+}
+section#single footer#contact-form form p span input,
+section#single footer#contact-form form p span textarea {
+  font-family: Helvetica, sans-serif;
+  font-size: 1rem;
+  border: 0;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 article {
   height: 100vh;
@@ -394,16 +414,32 @@ aside ul li:first-child {
   cursor: pointer;
 }
 aside ul li.close-last-subtitles:after {
+  transition: all 0.5s;
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: #c3c3c3;
   padding: 0 0 0 0.5rem;
   content: "\f102";
 }
+aside ul li.close-last-subtitles:hover:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: red;
+  padding: 0 0 0 0.5rem;
+  content: "\f102";
+}
 aside ul li.open-last-subtitles:after {
+  transition: all 0.5s;
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: #c3c3c3;
+  padding: 0 0 0 0.5rem;
+  content: "\f103";
+}
+aside ul li.open-last-subtitles:hover:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: red;
   padding: 0 0 0 0.5rem;
   content: "\f103";
 }
@@ -411,6 +447,11 @@ aside ul li a {
   color: #000;
   background-color: white;
   text-decoration: none;
+  transition: all 0.5s;
+  border: 1px solid white;
+}
+aside ul li a:hover {
+  border: 1px solid red;
 }
 aside ul li div {
   display: flex;
@@ -433,6 +474,90 @@ aside ul li p a {
   font-family: Helvetica, Calibri, sans-serif;
   font-weight: bold;
   font-size: 0.9rem;
+  transition: all 0.5s;
+  border: 0;
+}
+aside ul li p a:hover {
+  color: red;
+  border: 0;
+}
+aside#contact-form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  left: auto;
+  padding: 1rem;
+  color: #fff;
+  height: 100%;
+  background: #000;
+}
+aside#contact-form #close-contact-form {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: min-content;
+}
+aside#contact-form #close-contact-form:before {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: white;
+  padding: 0 0.5rem 0 0;
+  content: "\f00d";
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+aside#contact-form #close-contact-form:hover:before {
+  color: red;
+}
+aside#contact-form form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  text-align: left;
+  border: 0;
+  width: min-content;
+  font-family: Helvetica, sans-serif;
+}
+aside#contact-form form div.wpcf7-response-output,
+aside#contact-form form div.wpcf7-display-none,
+aside#contact-form form div.wpcf7-mail-sent-ok {
+  max-width: 100%;
+  margin: 1rem 0 1rem 0;
+}
+aside#contact-form form p {
+  margin: 0.3rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+aside#contact-form form p input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-family: Helvetica, sans-serif;
+  background-color: #fff;
+  border: none;
+  color: #333;
+}
+aside#contact-form form p span.ajax-loader {
+  display: none;
+}
+aside#contact-form form p span input,
+aside#contact-form form p span textarea {
+  font-family: Helvetica, sans-serif;
+  font-size: 1rem;
+  border: 0;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 section#tag article,
 section#category article,
@@ -464,7 +589,7 @@ section#genre article ul,
 section#interpret article ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 0;
+  margin-top: 1rem;
 }
 section#tag article ul.interpret-list,
 section#category article ul.interpret-list,
@@ -508,7 +633,7 @@ section#category article ul.tags li a:hover,
 section#genre article ul.tags li a:hover,
 section#interpret article ul.tags li a:hover {
   color: black;
-  text-decoration: none;
+  text-decoration: underline white;
 }
 section#tag article ul.children,
 section#category article ul.children,
@@ -516,5 +641,6 @@ section#genre article ul.children,
 section#interpret article ul.children {
   padding-left: 1rem;
   margin-bottom: 0.5rem;
+  margin-top: 0;
 }
 /*# sourceMappingURL=main.css.map */

@@ -23,13 +23,12 @@
 		}
 	});
 
-	$('#span-aside-form').click(function() {
-		if($('#aside-form').is(":visible"))
-			$(this).css('left', '0')
-		else
-			$(this).css('left', ($('#aside-form').width()))
+	$('#open-contact-form').click(function() {
+		$('#contact-form').css({'display':'block'});
+	});
 
-		$('#aside-form').slideToggle('slow');
+	$('#close-contact-form').click(function() {
+		$('#contact-form').css({'display':'none'});
 	});
 
 	$(window).scroll(function() {

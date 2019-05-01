@@ -1,7 +1,7 @@
 @img: "http://farbru.cekuj.net/wp-content/uploads";
 
 .font-awesome(@c:white, @p, @content){
-  font-family: "Font Awesome 5 Free", serif;
+  font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
   color: @c;
   padding: @p;
@@ -55,27 +55,49 @@ html, body{
   height: 100%;
 }
 
-.uvodnik {
-  font-family: Pacifico, sans-serif;
-  font-weight: normal;
-  margin: 0;
-  color: #c3c3c3;
-}
-
-.uvodnik::after {
-  .font-awesome(inherit, 0 0.5rem, "\f101");
+body{
+  overflow-x: hidden;
 }
 
 header{
-  .display-flex-row(nowrap, flex-end, center);
+  .display-flex-row(nowrap, flex-end, flex-start);
   height: max-content;
   margin-right: 1rem;
 
-  a{
-    color: white;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
+  ul{
+    margin-top: .5rem;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding: 0;
+    line-height: 1.8rem;
+    text-align: right;
+
+    li{
+      display: flex;
+      justify-content: flex-end;
+
+      &:first-child{
+        &::before{
+           .font-awesome(#c3c3c3, 0 0.5rem, "Jsi tu poprvé? \f101");
+          font-family: "Font Awesome 5 Free", Pacifico, sans-serif;
+          font-size: 1.5rem;
+        }
+      }
+
+      &:last-child, a{
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: underline;
+        transition: all .5s;
+        cursor: pointer;
+
+        &:hover{
+          text-decoration: underline red;
+        }
+      }
+    }
   }
 
   @media @smallest{

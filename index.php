@@ -3,9 +3,21 @@
 <main>
     <article id="home">
         <header>
-            <h1 class="uvodnik">Jsi&nbsp;tu&nbsp;poprvé?</h1>
-            <a href="#uvodnik" class="tlacitko">Úvodník</a>
+            <ul>
+                <li>
+                    <a href="#uvodnik" class="tlacitko">Úvodník</a>
+                </li>
+                <li id="open-contact-form">
+                    Napiš mi
+                </li>
+            </ul>
+
         </header>
+
+        <aside class="animated fadeInRight" id="contact-form">
+            <span id="close-contact-form">Zavřít</span>
+	        <?php echo do_shortcode( '[contact-form-7 id="681" title="Vzkaz"]' ); ?>
+        </aside>
 
         <aside>
 		    <?php
