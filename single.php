@@ -2,8 +2,10 @@
 <section id="single">
 	<header>
 		<?php get_search_form(); ?>
+        <a href="http://musicforyou.cekuj.net/">Domů</a>
         <a href="http://musicforyou.cekuj.net/interpreti">Interpreti</a>
         <a href="http://musicforyou.cekuj.net/zanry">Žánry</a>
+        <a href="#" id="open-contact-form">Napiš mi</a>
     </header>
 
 	<?php if (have_posts()) : ?>
@@ -72,9 +74,10 @@
 
 			<?php } ?>
 
-        <footer id="contact-form">
+        <aside class="animated fadeInRight" id="contact-form">
+            <span id="close-contact-form">Zavřít</span>
 	        <?php echo do_shortcode( '[contact-form-7 id="681" title="Vzkaz"]' ); ?>
-        </footer>
+        </aside>
 
 
 

@@ -109,3 +109,18 @@ header{
     }
   }
 }
+
+a[href^="#nowhere"]{
+  text-decoration: none;
+  font-weight: normal;
+  cursor: default;
+  &:hover{
+    text-decoration: none;
+    font-weight: normal;
+    cursor: default;
+    color: rgba(0, 0, 0, 0.7);
+    &:after{
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}

@@ -238,65 +238,6 @@ section#single article footer ul li a:hover {
 section#single article footer ul li + li {
   margin-left: 0.5rem;
 }
-section#single footer#contact-form {
-  background-color: #000000;
-  color: white;
-  width: 100%;
-  max-width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: auto;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-section#single footer#contact-form form {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: stretch;
-  text-align: left;
-  border: 0;
-  width: min-content;
-  font-family: Helvetica, sans-serif;
-}
-section#single footer#contact-form form div.wpcf7-response-output,
-section#single footer#contact-form form div.wpcf7-display-none,
-section#single footer#contact-form form div.wpcf7-mail-sent-ok {
-  max-width: 100%;
-  margin: 1rem 0 1rem 0;
-}
-section#single footer#contact-form form p {
-  margin: 0.3rem 0 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-}
-section#single footer#contact-form form p input {
-  font-size: 1rem;
-  padding: 0.5rem;
-  font-family: Helvetica, sans-serif;
-  background-color: #fff;
-  border: none;
-  color: #333;
-}
-section#single footer#contact-form form p span.ajax-loader {
-  display: none;
-}
-section#single footer#contact-form form p span input,
-section#single footer#contact-form form p span textarea {
-  font-family: Helvetica, sans-serif;
-  font-size: 1rem;
-  border: 0;
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #fff;
-}
 article {
   height: 100vh;
   max-height: 100%;
@@ -491,6 +432,7 @@ aside#contact-form {
   color: #fff;
   height: 100%;
   background: #000;
+  box-sizing: border-box;
 }
 aside#contact-form #close-contact-form {
   font-family: Helvetica, sans-serif;

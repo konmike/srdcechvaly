@@ -62,4 +62,18 @@ header ul li a:hover {
     display: none;
   }
 }
+a[href^="#nowhere"] {
+  text-decoration: none;
+  font-weight: normal;
+  cursor: default;
+}
+a[href^="#nowhere"]:hover {
+  text-decoration: none;
+  font-weight: normal;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.7);
+}
+a[href^="#nowhere"]:hover:after {
+  color: rgba(0, 0, 0, 0.7);
+}
 /*# sourceMappingURL=default.css.map */
