@@ -1,0 +1,67 @@
+.aside{
+  position: absolute;
+  top: 0;
+  font-family: Helvetica, Arial,sans-serif;
+}
+.aside--contact-form{
+  right: 0;
+  display: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: #fff;
+  background: #000;
+  height: 100%;
+}
+.aside__close-contact-form{
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: min-content;
+
+  &:before{
+    .font-awesome(white,0 0.5rem 0 0,"\f00d");
+    font-size: 2rem;
+    transition: all 0.5s;
+  }
+
+  &:hover{
+    &:before{
+      color: red;
+    }
+  }
+}
+.aside--last-articles{
+  left: 0;
+}
+.aside__list{
+}
+.aside__close-last-subtitles,.aside__open-last-subtitles{
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s;
+}
+.aside__close-last-subtitles{
+  &:after{
+    .font-awesome(#c3c3c3, 0 0 0 .5rem, "\f102")
+  }
+  &:hover{
+    &:after{
+      .font-awesome(red, 0 0 0 .5rem, "\f102")
+    }
+  }
+}
+.aside__open-last-subtitles{
+  &:after{
+    .font-awesome(#c3c3c3, 0 0 0 .5rem, "\f103")
+  }
+  &:hover{
+    &:after{
+      .font-awesome(red, 0 0 0 .5rem, "\f103")
+    }
+  }
+}

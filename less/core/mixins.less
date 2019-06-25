@@ -1,0 +1,24 @@
+.font-awesome(@color:white, @padding, @content){
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: @color;
+  padding: @padding;
+  content: @content;
+}
+
+.display-flex-row(@wrap:wrap, @j-c:center, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: @wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+.display-flex-column(@j-c, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}

@@ -1,0 +1,576 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+ul {
+  list-style-type: none;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+  height: max-content;
+}
+.header--home-page {
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-right: 1rem;
+}
+@media only screen and (max-width: 25em) {
+  .header--home-page {
+    padding: 1rem;
+    margin-right: 0;
+  }
+  .header--home-page h1 {
+    display: none;
+  }
+}
+.header--search-and-nav {
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 0;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.header--search-and-nav nav {
+  width: 50%;
+  max-width: 50%;
+}
+.nav {
+  padding: 0;
+  list-style-type: none;
+}
+.nav--home-page {
+  line-height: 1.8rem;
+  text-align: right;
+  margin: 0.5rem 1rem 0 0;
+}
+.nav--top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.nav__item {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav__item--comment::before {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: #c3c3c3;
+  padding: 0 0.5rem;
+  content: "Jsi tu poprvé? \f101";
+  font-family: "Font Awesome 5 Free", Pacifico, sans-serif;
+  font-size: 1.5rem;
+}
+.nav__link {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: underline;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.nav--home-page .nav__link {
+  color: #fff;
+}
+.nav--home-page .nav__link:hover {
+  text-decoration: underline #f00;
+}
+.nav--top .nav__link {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+}
+.nav--top .nav__link:hover {
+  color: #000;
+  text-decoration: underline #fff;
+}
+.nav--top .nav__link--active {
+  color: #000;
+  text-decoration: none;
+}
+.nav--top .nav__link--active:hover {
+  color: #000;
+  text-decoration: none;
+}
+.section {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.section--home-page {
+  justify-content: space-between;
+  height: 100vh;
+  max-height: 100%;
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/03/cave-1920-1280.jpg");
+}
+.section--editorial {
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+}
+.section--search-result,
+.section--single {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.article--editorial {
+  font-family: Indie Flower, cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 3rem 0 3rem;
+}
+.article--category,
+.article--tag,
+.article--interpret,
+.article--genre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article__link {
+  transition: all 0.5s;
+}
+.article__link--editorial {
+  color: #000;
+}
+.article__link--editorial:hover {
+  text-decoration-color: #f00;
+}
+.article__citation {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  font-family: Helvetica, sans-serif;
+}
+.article--search-result,
+.article--detail {
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+.article--search-result {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.article__link--search-result,
+.links p a {
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  line-height: 2rem;
+}
+.article__link--search-result:hover,
+.links p a:hover {
+  color: #000;
+  text-decoration: underline #fff;
+}
+.links p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.links p a {
+  transition: all 0.5s;
+}
+.links p a::after {
+  transition: all 0.5s;
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0.4rem;
+  content: "\f35d";
+}
+.links p a:hover::after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: #000000;
+  padding: 0.4rem;
+  content: "\f35d";
+}
+.article__title {
+  font-size: 2rem;
+  text-align: center;
+}
+.article--detail .article__title {
+  margin: 0.5rem 0;
+}
+.article--category .article__title,
+.article--tag .article__title,
+.article--interpret .article__title,
+.article--genre .article__title {
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 1rem 0 0 0;
+}
+.article--tag p {
+  text-align: center;
+}
+.aside {
+  position: absolute;
+  top: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.aside--contact-form {
+  right: 0;
+  display: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: #fff;
+  background: #000;
+  height: 100%;
+}
+.aside__close-contact-form {
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: min-content;
+}
+.aside__close-contact-form:before {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: white;
+  padding: 0 0.5rem 0 0;
+  content: "\f00d";
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+.aside__close-contact-form:hover:before {
+  color: red;
+}
+.aside--last-articles {
+  left: 0;
+}
+.aside__close-last-subtitles,
+.aside__open-last-subtitles {
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.aside__close-last-subtitles:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: #c3c3c3;
+  padding: 0 0 0 0.5rem;
+  content: "\f102";
+}
+.aside__close-last-subtitles:hover:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: red;
+  padding: 0 0 0 0.5rem;
+  content: "\f102";
+}
+.aside__open-last-subtitles:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: #c3c3c3;
+  padding: 0 0 0 0.5rem;
+  content: "\f103";
+}
+.aside__open-last-subtitles:hover:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: red;
+  padding: 0 0 0 0.5rem;
+  content: "\f103";
+}
+.footer {
+  display: flex;
+  margin: 1rem 0;
+}
+.footer--home-page,
+.footer--editorial {
+  justify-content: center;
+}
+.footer__wrap-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Indie Flower, cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+.footer__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  transition: all 0.5s;
+}
+.footer__link:hover {
+  text-decoration-color: #f00;
+}
+.footer__title {
+  margin: 0;
+  font-size: 2rem;
+}
+.footer__img {
+  height: 100px;
+  max-width: 100%;
+}
+.button-up {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+  font-size: 3rem;
+  text-decoration: none;
+}
+.button-up:after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: #000;
+  padding: 0.5rem;
+  content: "\f139";
+}
+.footer--article-detail {
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid black;
+}
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  width: min-content;
+  text-align: left;
+  border: 0;
+  margin: 0;
+}
+.wpcf7-form p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.3rem 0 0 0;
+  width: 100%;
+  max-width: 100%;
+}
+.wpcf7-form-control {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 0;
+}
+.wpcf7-textarea,
+.wpcf7-email {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.wpcf7-submit {
+  background-color: #fff;
+  color: #333;
+}
+.wpcf7-response-output,
+.wpcf7-display-none,
+.wpcf7-mail-sent-ok {
+  max-width: 100%;
+  margin: 1rem 0 1rem 0 !important;
+}
+.ajax-loader {
+  display: none !important;
+}
+.form-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
+  max-width: 100%;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  transition: all 0.5s;
+}
+.form-search__query {
+  font-family: Helvetica, Calibri, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-indent: 0.1rem;
+  color: #fff;
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 2rem;
+  max-height: 3rem;
+}
+.form-search__query::placeholder {
+  color: #fff;
+}
+.form-search__query:focus {
+  outline: none;
+}
+.form-search__submit {
+  min-width: 64px;
+  width: 64px;
+  height: 64px;
+  padding: 1px 0;
+  cursor: pointer;
+  border: 0;
+  box-sizing: content-box;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2019/03/searchicon-white.png");
+  background-color: transparent;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.header--search-and-nav .form-search {
+  margin: 0.5rem;
+  max-width: 50%;
+  width: 50%;
+  border: 1px solid #dfe1e5;
+  border-radius: 2rem;
+}
+.header--search-and-nav .form-search:hover,
+.header--search-and-nav .form-search:active {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+.header--search-and-nav .form-search .form-search__query {
+  font-size: 1rem;
+  text-indent: 1rem;
+  color: #000;
+  line-height: 2.5rem;
+  opacity: 0.7;
+}
+.header--search-and-nav .form-search .form-search__query::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.header--search-and-nav .form-search .form-search__submit {
+  height: 45px;
+  min-width: 45px;
+  width: 45px;
+  margin: 0 0.5rem;
+  background-image: url("http://musicforyou.cekuj.net/wp-content/uploads/2018/09/searchIcon.png");
+}
+.list {
+  list-style-type: none;
+}
+.list--home-page {
+  font-family: Helvetica, Arial, sans-serif;
+  padding-left: 1rem;
+}
+.list--article-detail {
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+}
+.list--article-detail li + li {
+  margin-left: 0.5rem;
+}
+.list--category,
+.list--tag,
+.list--interpret,
+.list--genre {
+  padding: 0;
+  margin-top: 1rem;
+}
+.list__item {
+  display: block;
+  margin: 1rem 0;
+  width: fit-content;
+}
+.list__link,
+.list--interpret a,
+.children a {
+  font-family: Helvetica, Calibri, sans-serif;
+  transition: all 0.5s;
+}
+.list__link--home-page-title {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+}
+.list__link--home-page-title:hover {
+  border: 1px solid #f00;
+}
+.list__link--home-page-tag {
+  color: #fff;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 0;
+}
+.list__link--home-page-tag:hover {
+  color: #f00;
+  border: 0;
+}
+.list--article-detail .list__link {
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  padding: 0.2rem;
+}
+.list--article-detail .list__link:hover {
+  color: #f00;
+}
+.list--category .list__link,
+.list--tag .list__link,
+.list--interpret a,
+.children a,
+.list--genre .list__link {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+  line-height: 1.5rem;
+}
+.list--category .list__link:hover,
+.list--tag .list__link:hover,
+.list--interpret a:hover,
+.children a:hover,
+.list--genre .list__link:hover {
+  color: black;
+  text-decoration: underline white;
+}
+.list__excerpt {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: stretch;
+  align-items: stretch;
+  align-content: stretch;
+}
+.list__excerpt p {
+  width: fit-content;
+  margin: 0;
+  color: white;
+  background-color: #000;
+}
+.children {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+/*# sourceMappingURL=index.css.map */

@@ -14,12 +14,12 @@
 
 	$('#last-subtitles').click(function() {
 		$(this).siblings().slideToggle('slow');
-		if($(this).hasClass('open-last-subtitles')){
-			$(this).addClass('close-last-subtitles')
-			$(this).removeClass('open-last-subtitles')
+		if($(this).hasClass('aside__open-last-subtitles')){
+			$(this).addClass('aside__close-last-subtitles')
+			$(this).removeClass('aside__open-last-subtitles')
 		}else{
-			$(this).removeClass('close-last-subtitles')
-			$(this).addClass('open-last-subtitles')
+			$(this).removeClass('aside__close-last-subtitles')
+			$(this).addClass('aside__open-last-subtitles')
 		}
 	});
 

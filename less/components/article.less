@@ -1,0 +1,100 @@
+.article{
+
+}
+.article--editorial{
+  font-family: Indie Flower, cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 3rem 0 3rem;
+}
+.article--category,
+.article--tag,
+.article--interpret,
+.article--genre{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article__link{
+  transition: all 0.5s;
+}
+.article__link--editorial{
+  color: #000;
+
+  &:hover{
+    text-decoration-color: #f00;
+  }
+}
+.article__citation{
+   font-size: 1rem;
+   font-weight: normal;
+   font-style: italic;
+   font-family: Helvetica, sans-serif;
+}
+.article--search-result,
+.article--detail{
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem;
+  color: rgba(0,0,0,0.7);
+}
+.article--search-result{
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.05),
+              0 2px 3px 0 rgba(0,0,0,0.1);
+}
+.article__link--search-result,
+.links p a{
+  text-decoration-color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.7);
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  line-height: 2rem;
+
+  &:hover{
+    color: #000;
+    text-decoration: underline #fff;
+  }
+}
+.links p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.links p a{
+  transition: all 0.5s;
+
+  &::after{
+    transition: all 0.5s;
+    .font-awesome(rgba(0,0,0,0.7), 0.4rem, "\f35d");
+  }
+
+  &:hover{
+    &::after{
+      .font-awesome(rgba(0,0,0,1), 0.4rem, "\f35d");
+    }
+  }
+}
+.article__title{
+  font-size: 2rem;
+  text-align: center;
+}
+.article--detail .article__title{
+  margin: 0.5rem 0;
+}
+.article--category .article__title,
+.article--tag .article__title,
+.article--interpret .article__title,
+.article--genre .article__title{
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 1rem 0 0 0;
+}
+//Vysvetlivka zanru
+.article--tag p{
+    text-align: center;
+}

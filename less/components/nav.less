@@ -1,0 +1,58 @@
+.nav{
+  padding: 0;
+  list-style-type: none;
+}
+.nav--home-page{
+  line-height: 1.8rem;
+  text-align: right;
+  margin: 0.5rem 1rem 0 0;
+}
+.nav--top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.nav__item{
+  display: flex;
+  justify-content: flex-end;
+}
+.nav__item--comment{
+  &::before{
+    .font-awesome(#c3c3c3, 0 0.5rem, "Jsi tu poprvé? \f101");
+    font-family: "Font Awesome 5 Free", Pacifico, sans-serif;
+    font-size: 1.5rem;
+  }
+}
+.nav__link{
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: underline;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.nav--home-page .nav__link{
+  color: #fff;
+
+  &:hover{
+    text-decoration: underline #f00;
+  }
+}
+.nav--top .nav__link{
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+
+  &:hover{
+    color: #000;
+    text-decoration: underline #fff;
+  }
+}
+.nav--top .nav__link--active{
+  color: #000;
+  text-decoration: none;
+
+  &:hover{
+    color: #000;
+    text-decoration: none;
+  }
+}
