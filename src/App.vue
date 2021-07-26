@@ -1,14 +1,28 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <header class="header">
+    <search-bar />
+
+    <div class="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+  </header>
   <router-view />
 </template>
 
+<script>
+import SearchBar from "@/components/SearchBar.vue";
+
+export default {
+  components: {
+    SearchBar,
+  },
+};
+</script>
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

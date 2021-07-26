@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="main">
+    <last-videos v-show="!searching" />
+    <search-results v-show="searching" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import LastVideos from "@/components/LastVideos.vue";
+import SearchResults from "@/components/SearchResults.vue";
 
 export default {
   name: "Home",
+
   components: {
-    HelloWorld,
+    LastVideos,
+    SearchResults,
+  },
+  data() {
+    return {
+      searching: false,
+    };
+  },
+  mounted() {
+    this.emitter.on("updateQuery", (q) => {
+      this.searching = q === "" ? false : true;
+    });
   },
 };
 </script>

@@ -1,0 +1,23 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#app {
+  background-image: url("/img/cave-min.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

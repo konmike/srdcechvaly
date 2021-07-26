@@ -1,0 +1,14 @@
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  max-height: 350px;
+  min-height: 350px;
+  border-radius: 0.5rem;
+  h2 {
+    color: white;
+    font-size: 3rem;
+  }
+}
