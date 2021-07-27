@@ -12,17 +12,18 @@
       display: none;
     }
   }
-
-  &:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 3rem;
-    bottom: 3.6rem;
-    width: 5px;
-    border-radius: 5px;
-    background-color: #434343;
-    box-shadow: -10px 0 20px 3px #000;
+  &.overflow {
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 3rem;
+      bottom: 3.6rem;
+      width: 5px;
+      border-radius: 5px;
+      background-color: #434343;
+      box-shadow: -10px 0 20px 3px #000;
+    }
   }
 
   .header {
@@ -30,6 +31,7 @@
     padding: 0;
     margin-top: 3rem;
     background-color: rgba(0, 0, 0, 0.2);
+    min-width: 240px;
     max-width: 240px;
     min-height: 350px;
     margin-right: 1rem;

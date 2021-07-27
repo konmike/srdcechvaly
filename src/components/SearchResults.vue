@@ -1,5 +1,5 @@
 <template>
-  <box :class="{ empty: noResults }">
+  <box :dataCounter="results.length">
     <div class="header header--search-results">
       <h3 class="title title--transparent">Hledáte:</h3>
       <h4 class="query title--transparent">{{ query }}</h4>
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       noResults: false,
+
       query: "",
       results: [],
     };
@@ -74,15 +75,10 @@ export default {
                   thumbnailUrl: item.snippet.thumbnails.high.url,
                 });
               });
-            // console.log("Here we are");
-            // console.log(des);
             if (this.next) {
-              // console.log(item.snippet.description);
-              // console.log("fail, sorry");
               return;
             }
-
-            console.log(this.results);
+            // console.log(this.results);
           });
           // if (this.results.length === 0) this.noResults = true;
         })

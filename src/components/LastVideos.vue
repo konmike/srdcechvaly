@@ -1,5 +1,5 @@
 <template>
-  <box>
+  <box :dataCounter="videos.length">
     <div class="header header--last-videos">
       <h3 class="title title--transparent">Nejnovější titulky</h3>
     </div>
@@ -32,6 +32,20 @@ export default {
       let tmp = des.split("********************************************")[1];
       return tmp.substring(8, tmp.length).trim();
     },
+    createCard(item) {
+      let titleTranslate = item.snippet.title.split("|");
+      let interpretTitle = titleTranslate[0].split("-");
+
+      this.videos.push({
+        interpret: interpretTitle[0].trim(),
+        title: interpretTitle[1].trim(),
+        translate: titleTranslate[1].trim(),
+        videoId: item.snippet.resourceId.videoId,
+        published: item.snippet.publishedAt,
+        subtitleUrl: this.subtitleUrl(item.snippet.description),
+        thumbnailUrl: item.snippet.thumbnails.high.url,
+      });
+    },
   },
   mounted() {
     axios
@@ -43,27 +57,8 @@ export default {
 
         response.data.items.forEach((item) => {
           if (!item.snippet.description.includes("#cztitulky")) return;
-
-          let titleTranslate = item.snippet.title.split("|");
-          let interpretTitle = titleTranslate[0].split("-");
-
-          this.videos.push({
-            // id: this.getId(),
-            interpret: interpretTitle[0].trim(),
-            title: interpretTitle[1].trim(),
-            translate: titleTranslate[1].trim(),
-            videoId: item.snippet.resourceId.videoId,
-            published: item.snippet.publishedAt,
-            subtitleUrl: this.subtitleUrl(item.snippet.description),
-            thumbnailUrl: item.snippet.thumbnails.high.url,
-          });
+          this.createCard(item);
         });
-
-        console.log(this.videos);
-        // console.log(response.data.items[0].snippet.title);
-        // console.log(response.data.items[0].snippet.resourceId.videoId);
-        // console.log(response.data.items[0].snippet.publishedAt);
-        // console.log(response.data.items[0].snippet.thumbnails.maxres.url);
       })
       .catch((error) => {
         console.log(error);
