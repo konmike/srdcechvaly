@@ -1,21 +1,30 @@
 <template>
+  <!-- <transition name="fade"> -->
   <box :dataCounter="videos.length">
     <div class="header header--last-videos">
       <h3 class="title title--transparent">Nejnovější titulky</h3>
     </div>
-    <card-grid :data="videos" />
+
+    <ul class="card-grid">
+      <!-- <transition-group name="fade-card"> -->
+      <li class="item" v-for="(video, index) in videos" :key="index">
+        <card :video="video" />
+      </li>
+      <!-- </transition-group> -->
+    </ul>
   </box>
+  <!-- </transition> -->
 </template>
 
 <script>
 import axios from "axios";
 import Box from "@/components/Box";
-import CardGrid from "@/components/CardGrid";
+import Card from "@/components/Card.vue";
 
 export default {
   components: {
     Box,
-    CardGrid,
+    Card,
   },
   data() {
     return {
@@ -66,3 +75,41 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.fade-card-enter-active {
+  animation: card 2s forwards;
+}
+
+.fade-enter-active {
+  animation: componentFade 2s forwards;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  // transform: scale(0);
+}
+.fade-leave-from {
+  opacity: 0;
+  // transform: scale(0);
+}
+
+@keyframes componentFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes card {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 1;
+  }
+}
+</style>
