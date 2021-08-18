@@ -1,19 +1,18 @@
 <template>
-  <!-- <transition name="fade"> -->
-  <box :dataCounter="videos.length">
-    <div class="header header--last-videos">
-      <h3 class="title title--transparent">Nejnovější titulky</h3>
-    </div>
-
-    <ul class="card-grid">
+  <box :dataCounter="videos.length" :class="[{ overflow: isAfter }]">
+    <transition name="fade">
+      <div class="header header--last-videos">
+        <h3 class="title title--transparent">Nejnovější titulky</h3>
+      </div>
+    </transition>
+    <ul id="cardGrid" class="card-grid">
       <!-- <transition-group name="fade-card"> -->
       <li class="item" v-for="(video, index) in videos" :key="index">
-        <card :video="video" />
+        <card :video="video" @isScroll="isAfter = $event" />
       </li>
       <!-- </transition-group> -->
     </ul>
   </box>
-  <!-- </transition> -->
 </template>
 
 <script>
@@ -29,6 +28,7 @@ export default {
   data() {
     return {
       videos: [],
+      isAfter: false,
     };
   },
   methods: {
@@ -62,7 +62,7 @@ export default {
         `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UUQnju4UrTI_MN14nEtjxrjA&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E&part=snippet&order=date&maxResults=7`
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
 
         response.data.items.forEach((item) => {
           if (!item.snippet.description.includes("#cztitulky")) return;

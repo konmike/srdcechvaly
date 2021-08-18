@@ -1,20 +1,20 @@
 <template>
-  <transition name="fade">
-    <box :dataCounter="results.length">
-      <div class="header header--search-results">
-        <h3 class="title title--transparent">Hledáte:</h3>
-        <h4 class="query title--transparent">{{ query }}</h4>
-      </div>
-      <div v-show="noResults" class="no-results">
-        <h2>Žádné výsledky pro hledaný výraz.</h2>
-      </div>
-      <ul v-show="!noResults" class="card-grid">
-        <li class="item" v-for="(video, index) in results" :key="index">
-          <card :video="video" />
-        </li>
-      </ul>
-    </box>
-  </transition>
+  <!-- <transition name="fade"> -->
+  <box :dataCounter="results.length" :class="[{ overflow: isAfter }]">
+    <div class="header header--search-results">
+      <h3 class="title title--transparent">Hledáte:</h3>
+      <h4 class="query title--transparent">{{ query }}</h4>
+    </div>
+    <div v-show="noResults" class="no-results">
+      <h2>Žádné výsledky pro hledaný výraz.</h2>
+    </div>
+    <ul v-show="!noResults" id="cardGrid" class="card-grid">
+      <li class="item" v-for="(video, index) in results" :key="index">
+        <card :video="video" @isScroll="isAfter = $event" />
+      </li>
+    </ul>
+  </box>
+  <!-- </transition> -->
 </template>
 
 <script>
@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       noResults: false,
+      isAfter: false,
       query: "",
       results: [],
     };
@@ -54,41 +55,57 @@ export default {
         thumbnailUrl: item.snippet.thumbnails.high.url,
       });
     },
-    searching(res) {
+    searching() {
       this.results = [];
-      if (!res.length > 0) {
-        this.noResults = true;
-        return;
-      }
-      this.noResults = false;
 
-      res.forEach((item) => {
-        // console.log(item);
+      axios
+        .get(
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCQnju4UrTI_MN14nEtjxrjA&maxResults=20&order=date&q=${this.query}&type=video&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+        )
+        .then((response) => {
+          let res = response.data.items;
 
-        axios
-          .get(
-            `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${item.id.videoId}&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
-          )
-          .then((res) => {
-            let item = res.data.items[0];
+          if (!res.length > 0) {
+            this.noResults = true;
+            return;
+          }
+
+          this.noResults = false;
+
+          res.forEach((item) => {
             // console.log(item);
-            if (item.snippet.description.includes("#cztitulky")) {
-              this.addToRes(item);
-            }
-          })
-          .catch((error) => {
-            console.log(error);
+
+            axios
+              .get(
+                `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${item.id.videoId}&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+              )
+              .then((res) => {
+                let item = res.data.items[0];
+                // console.log(item);
+                if (item.snippet.description.includes("#cztitulky")) {
+                  this.addToRes(item);
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+              });
           });
-      });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  watch: {
+    $route(to) {
+      // react to route changes...
+      this.query = to.query.q;
+      this.searching();
     },
   },
   mounted() {
-    this.emitter.on("updateQuery", (q) => {
-      this.query = q;
-    });
-    this.emitter.on("searchResults", (res) => {
-      this.searching(res);
-    });
+    this.query = this.$route.query.q;
+    this.searching();
   },
 };
 </script>

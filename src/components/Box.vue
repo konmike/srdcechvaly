@@ -1,5 +1,5 @@
 <template>
-  <div :class="[{ empty: dataCounter == 0, overflow: dataCounter > 3 }, 'box']">
+  <div v-cloak :class="[{ empty: dataCounter == 0 }, 'box']">
     <slot></slot>
   </div>
 </template>

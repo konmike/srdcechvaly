@@ -3,11 +3,16 @@
     <search-bar />
 
     <div class="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/" class="nav__link">Nejnovější</router-link>
+      <router-link to="/all" class="nav__link">Všechny</router-link>
+      <router-link to="/about" class="nav__link">O projektu</router-link>
     </div>
   </header>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script>
@@ -29,16 +34,13 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease-out;
 }
 </style>

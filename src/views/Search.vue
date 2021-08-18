@@ -1,18 +1,18 @@
 <template>
   <div class="main">
-    <last-videos />
+    <search-results />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import LastVideos from "@/components/LastVideos.vue";
+import SearchResults from "@/components/SearchResults.vue";
 
 export default {
-  name: "Home",
+  name: "Search",
 
   components: {
-    LastVideos,
+    SearchResults,
   },
 };
 </script>

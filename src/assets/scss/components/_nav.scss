@@ -1,16 +1,28 @@
 .nav {
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // margin: 2rem;
-  opacity: 0;
+  display: flex;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  z-index: 20;
 
-  a {
+  &__link {
     font-weight: bold;
-    color: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: all 250ms;
+
+    &:hover,
+    &.router-link-exact-active {
+      border-bottom: 2px solid #2381e2;
+    }
 
     &.router-link-exact-active {
-      color: #42b983;
+      cursor: default;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
