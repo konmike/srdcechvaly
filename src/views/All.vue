@@ -1,16 +1,18 @@
 <template>
   <div class="main">
-    <h1>Všechny titulky</h1>
     <all-interprets />
+    <interpret-detail />
   </div>
 </template>
 
 <script>
 import AllInterprets from "@/components/AllInterprets.vue";
+import InterpretDetail from "@/components/InterpretDetail.vue";
 
 export default {
   components: {
     AllInterprets,
+    InterpretDetail,
   },
 };
 </script>

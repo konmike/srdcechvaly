@@ -40,14 +40,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    .title {
-      padding: 1rem 1rem;
-      font-size: 1.8rem;
-      text-align: left;
-      text-transform: uppercase;
-      margin: 0;
-      width: 100%;
-    }
+
     .query {
       margin: 0;
       padding: 0 1rem 1rem 1rem;
@@ -61,11 +54,6 @@
         border-radius: 0 0 0.5rem 0.5rem;
       }
     }
-  }
-
-  .title--transparent {
-    mix-blend-mode: screen;
-    background-color: #fff;
   }
 }
 [v-cloak] {

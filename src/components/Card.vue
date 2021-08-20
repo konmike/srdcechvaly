@@ -8,7 +8,7 @@
 
       <div class="description">
         <span class="interpret">{{ video.interpret }}</span>
-        <span class="title">{{ video.title }}</span>
+        <span class="song-name">{{ video.title }}</span>
         <span class="translate">{{ video.translate }}</span>
         <div class="icons">
           <a :href="video.subtitleUrl" title="Stáhnout titulky" class="link">

@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="side-box" v-cloak>
     <ul class="list">
       <li class="item" v-for="(interpret, index) in playlists" :key="index">
         {{ interpret.title }}
       </li>
     </ul>
+    <h3 class="title title--transparent">Všechny titulky</h3>
   </div>
 </template>
 

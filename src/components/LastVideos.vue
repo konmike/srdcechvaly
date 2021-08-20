@@ -1,9 +1,9 @@
 <template>
   <box :dataCounter="videos.length" :class="[{ overflow: isAfter }]">
     <transition name="fade">
-      <div class="header header--last-videos">
+      <header class="header header--last-videos">
         <h3 class="title title--transparent">Nejnovější titulky</h3>
-      </div>
+      </header>
     </transition>
     <ul id="cardGrid" class="card-grid">
       <!-- <transition-group name="fade-card"> -->

@@ -1,0 +1,12 @@
+.title {
+  padding: 1rem 1rem;
+  font-size: 1.8rem;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  width: 100%;
+}
+.title--transparent {
+  mix-blend-mode: screen;
+  background-color: #fff;
+}

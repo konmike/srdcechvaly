@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header header--top">
     <search-bar />
 
     <div class="nav">

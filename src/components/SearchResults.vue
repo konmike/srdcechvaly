@@ -1,10 +1,10 @@
 <template>
   <!-- <transition name="fade"> -->
   <box :dataCounter="results.length" :class="[{ overflow: isAfter }]">
-    <div class="header header--search-results">
+    <header class="header header--search-results">
       <h3 class="title title--transparent">Hledáte:</h3>
       <h4 class="query title--transparent">{{ query }}</h4>
-    </div>
+    </header>
     <div v-show="noResults" class="no-results">
       <h2>Žádné výsledky pro hledaný výraz.</h2>
     </div>
