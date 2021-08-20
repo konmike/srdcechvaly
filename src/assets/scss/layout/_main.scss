@@ -7,4 +7,9 @@
   max-width: 100%;
   padding-bottom: 4rem;
   position: relative;
+
+  &--about {
+    align-items: center;
+    padding-bottom: 0;
+  }
 }
