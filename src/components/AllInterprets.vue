@@ -1,7 +1,12 @@
 <template>
   <div class="side-box" v-cloak>
     <ul class="list">
-      <li class="item" v-for="(interpret, index) in playlists" :key="index">
+      <li
+        :class="[{ isActive: interpret.active }, 'item']"
+        v-for="(interpret, index) in playlists"
+        :key="index"
+        @click="newActive(interpret)"
+      >
         {{ interpret.title }}
       </li>
     </ul>
@@ -19,6 +24,15 @@ export default {
     };
   },
   methods: {
+    newActive(interpret) {
+      console.log(interpret);
+      let result = this.playlists.find((obj) => {
+        return obj.active === true;
+      });
+      result.active = false;
+      interpret.active = true;
+      this.emitter.emit("activeInterpret", interpret);
+    },
     addPlaylist(data) {
       data.forEach((play) => {
         if (play.snippet.localized.title.includes("| cz titulky")) {
@@ -27,6 +41,7 @@ export default {
             id: play.id,
             title: titleParse[0].trim(),
             thumbnailUrl: play.snippet.thumbnails.high.url,
+            active: false,
           });
         }
       });
@@ -43,6 +58,8 @@ export default {
             this.getPlaylists(res.data.nextPageToken);
           } else {
             this.playlists.sort((a, b) => a.title.localeCompare(b.title));
+            this.playlists[0].active = true;
+            this.emitter.emit("activeInterpret", this.playlists[0]);
             console.log(this.playlists);
           }
         })
