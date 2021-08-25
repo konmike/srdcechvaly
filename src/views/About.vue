@@ -1,30 +1,59 @@
 <template>
   <div class="main main--about">
     <article class="article article--editorial">
-      <p>
-        "Túžim sa vrátiť do srdca chvály<br />
-        kde si jedine Ty, jedine Ty Ježiš" <br />
-        <span class="article__citation">(Richard Čanaky, Hudba dohrává)</span>
-      </p>
-      <p>
-        Tento web slouží jako prodloužená ruka mého Youtube kanálu.<br />
-        Můžete si zde snadno najít titulky ke své oblíbené písni,<br />
-        stejně tak zde v přehledné podobě najdete seznam všech doposud<br />
-        vytvořených titulků dle jednotlivých
-        <a
-          href="http://srdcechvaly.cekuj.net/interpreti"
-          class="article__link article__link--editorial"
-          title="Interpreti"
-          >interpretů</a
-        >
-        či
-        <a
-          href="http://srdcechvaly.cekuj.net/zanry"
-          class="article__link article__link--editorial"
-          title="Žánry"
-          >žánrů</a
-        >.
-      </p>
+      <header class="header">
+        <blockquote class="sidekick">
+          <span
+            >Túžim sa vrátiť do srdca chvály, kde si jedine Ty, jedine Ty
+            Ježiš...</span
+          >
+          <cite>Richard Čanaky, Hudba dohrává</cite>
+        </blockquote>
+        <h3 class="title title--transparent">Srdce chvály</h3>
+      </header>
+      <div class="content">
+        <h3 class="title title--transparent">České titulky k:</h3>
+        <ul>
+          <li>zahraniční křesťanské písně</li>
+          <li>spoken word</li>
+          <li>trailery</li>
+          <li>filmy</li>
+          <li>a další...</li>
+        </ul>
+
+        <p>
+          Své tipy k otitulkování posílejte na:
+          <a href="mailto:srdcechvaly@gmail.com">srdcechvaly@gmail.com</a>
+        </p>
+
+        <div class="counters">
+          <h3 v-cloak>
+            <span>{{ subscribers }}</span
+            >&nbsp;Odběratelů
+          </h3>
+          <h3 v-cloak>
+            <span>{{ videos }}</span
+            >&nbsp;Titulek
+          </h3>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://1drv.ms/f/s!AlC2uXdxwQQAhzi3uv_ykp9he49I"
+            class="link"
+            title="Titulky ke stažení"
+          >
+            <i class="fas fa-closed-captioning"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/c/srdcechvaly"
+            class="link"
+            title="Youtube - Srdce chvály"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
     </article>
     <about-footer />
   </div>
@@ -32,13 +61,30 @@
 
 <script>
 import AboutFooter from "@/components/AboutFooter.vue";
+import axios from "axios";
 export default {
   components: {
     AboutFooter,
   },
   data() {
-    return {};
+    return {
+      subscribers: 0,
+      videos: 0,
+    };
   },
   methods: {},
+
+  mounted() {
+    axios
+      .get(
+        `https://youtube.googleapis.com/youtube/v3/channels?part=statistics&id=UCQnju4UrTI_MN14nEtjxrjA&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+      )
+      .then((res) => {
+        console.log(res);
+        // console.log(res.data.items[0].statistics.subscriberCount);
+        this.subscribers = res.data.items[0].statistics.subscriberCount;
+        this.videos = res.data.items[0].statistics.videoCount;
+      });
+  },
 };
 </script>

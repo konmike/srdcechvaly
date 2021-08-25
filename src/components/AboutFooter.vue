@@ -4,38 +4,22 @@
       O projekt Srdce chvály se stará
       <a class="link" href="https://konecnymichal.cz">Michal Konečný</a>.
     </div>
-    <div class="social-links">
-      <a
-        href="https://1drv.ms/f/s!AlC2uXdxwQQAhzi3uv_ykp9he49I"
-        class="link"
-        title="Titulky ke stažení"
-      >
-        <i class="fas fa-closed-captioning"></i>
-      </a>
-      <a
-        href="https://www.youtube.com/c/srdcechvaly"
-        class="link"
-        title="Youtube - Srdce chvály"
-      >
-        <i class="fab fa-youtube"></i>
-      </a>
-    </div>
   </footer>
 </template>
 
 <script>
-import axios from "axios";
-export default {
-  mounted() {
-    axios
-      .get(
-        `https://youtube.googleapis.com/youtube/v3/channels?part=statistics&id=UCQnju4UrTI_MN14nEtjxrjA&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
-      )
-      .then((res) => {
-        console.log(res);
-      });
-  },
-};
+// import axios from "axios";
+// export default {
+//   mounted() {
+//     axios
+//       .get(
+//         `https://youtube.googleapis.com/youtube/v3/channels?part=statistics&id=UCQnju4UrTI_MN14nEtjxrjA&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+//       )
+//       .then((res) => {
+//         console.log(res);
+//       });
+//   },
+// };
 </script>
 
 <style lang="scss" scoped></style>

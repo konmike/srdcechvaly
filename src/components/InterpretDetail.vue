@@ -50,11 +50,17 @@ export default {
     };
   },
   methods: {
+    parseName(name) {
+      let tmp = name.split(" - ");
+      return this.name === tmp[0] ? tmp[1] : tmp[0] + " - " + tmp[1];
+    },
     addSong(items) {
       items.forEach((element) => {
+        this.parseName(element.snippet.title);
         this.songs.push({
           id: element.snippet.resourceId.videoId,
-          name: element.snippet.title,
+          // name: element.snippet.title,
+          name: this.parseName(element.snippet.title),
         });
       });
     },

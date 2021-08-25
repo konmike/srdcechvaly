@@ -55,7 +55,11 @@
       }
     }
   }
+  .title--transparent {
+    border-radius: 0;
+  }
 }
 [v-cloak] {
   display: none;
+  // opacity: 0;
 }

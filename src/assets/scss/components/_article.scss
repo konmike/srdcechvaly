@@ -1,0 +1,123 @@
+.article {
+  display: flex;
+  justify-content: center;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-width: 240px;
+    max-width: 350px;
+    min-height: 350px;
+    margin-right: 1rem;
+    padding: 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    // border-right: 2px solid #fff;
+  }
+  .title {
+  }
+}
+
+.content {
+  // padding: 1rem 2rem;
+  max-width: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  text-align: left;
+
+  .title--transparent {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 1rem 0.5rem 1rem;
+    margin: 0;
+
+    li {
+      background-color: rgba(0, 0, 0, 0.7);
+      // margin-right: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 0.2rem;
+    }
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    // text-align: center;
+    padding: 0.5rem 2rem;
+    margin-bottom: 0;
+
+    a {
+      display: block;
+      margin: 0.5rem;
+      width: fit-content;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #fff;
+      border-bottom: 2px solid transparent;
+      transition: all 250ms;
+      &:hover {
+        border-bottom: 2px solid #2381e2;
+      }
+    }
+  }
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  // color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  h3 {
+    margin: 0;
+    padding-right: 0.5rem;
+    color: rgb(36, 36, 36);
+    background-color: #fff;
+    border-radius: 0.2rem;
+    // mix-blend-mode: screen;
+    // background-color: #fff;
+
+    span {
+      display: inline-block;
+      padding: 0.5rem;
+      background-color: rgb(36, 36, 36);
+      color: #fff;
+      border-radius: 0.2rem 0 0 0.2rem;
+    }
+  }
+}
+
+.social-links {
+  // margin-left: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  .link {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 1rem;
+    transition: all 250ms;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .fas,
+  .fab {
+    font-size: 3rem;
+  }
+}
