@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
+  <article class="article">
     <last-videos />
-  </div>
+  </article>
 </template>
 
 <script>

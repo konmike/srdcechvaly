@@ -1,8 +1,8 @@
 <template>
-  <div class="main">
+  <article class="article">
     <all-interprets />
     <interpret-detail />
-  </div>
+  </article>
 </template>
 
 <script>

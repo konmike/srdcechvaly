@@ -13,14 +13,17 @@
       <component :is="Component" />
     </transition>
   </router-view>
+  <project-footer />
 </template>
 
 <script>
 import SearchBar from "@/components/SearchBar.vue";
+import ProjectFooter from "@/components/ProjectFooter.vue";
 
 export default {
   components: {
     SearchBar,
+    ProjectFooter,
   },
 };
 </script>

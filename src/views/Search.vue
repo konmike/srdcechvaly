@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
+  <article class="article">
     <search-results />
-  </div>
+  </article>
 </template>
 
 <script>
