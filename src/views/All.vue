@@ -1,8 +1,10 @@
 <template>
-  <article class="article">
-    <all-interprets />
-    <interpret-detail />
-  </article>
+  <main class="main">
+    <div class="container">
+      <all-interprets />
+      <interpret-detail />
+    </div>
+  </main>
 </template>
 
 <script>
@@ -16,5 +18,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

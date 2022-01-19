@@ -39,6 +39,7 @@
 
 <script>
 import axios from "axios";
+import config from "/config";
 export default {
   data() {
     return {
@@ -67,11 +68,15 @@ export default {
     getItems(token) {
       axios
         .get(
-          `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=${token}&playlistId=${this.id}&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+          `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=${token}&playlistId=${this.id}&key=${config.key}`
         )
         .then((res) => {
-          console.log(res.data.items);
-          this.addSong(res.data.items);
+          // console.log(res.data.items);
+          let data = res.data.items.filter(
+            (el) => el.snippet.title != "Deleted video"
+          );
+          // console.log(data);
+          this.addSong(data);
           if (res.data.nextPageToken !== undefined) {
             this.getItems(res.data.nextPageToken);
           } else {
@@ -86,7 +91,7 @@ export default {
   },
   mounted() {
     this.emitter.on("activeInterpret", (data) => {
-      console.log(data);
+      // console.log(data);
       this.name = data.title;
       this.id = data.id;
       this.thumbnailUrl = data.thumbnailUrl;
@@ -94,12 +99,16 @@ export default {
 
       axios
         .get(
-          `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${this.id}&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+          `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${this.id}&key=${config.key}`
         )
         .then((res) => {
-          console.log(res.data.items);
+          // console.log(res.data.items);
           this.songs = [];
-          this.addSong(res.data.items);
+          let data = res.data.items.filter(
+            (el) => el.snippet.title != "Deleted video"
+          );
+          // console.log(data);
+          this.addSong(data);
           if (res.data.nextPageToken !== undefined) {
             this.getItems(res.data.nextPageToken);
           } else {
@@ -114,5 +123,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

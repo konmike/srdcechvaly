@@ -13,7 +13,6 @@
       <component :is="Component" />
     </transition>
   </router-view>
-  <project-footer />
 </template>
 
 <script>

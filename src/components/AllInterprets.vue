@@ -16,6 +16,7 @@
 
 <script>
 import axios from "axios";
+import config from "/config";
 export default {
   data() {
     return {
@@ -25,7 +26,7 @@ export default {
   },
   methods: {
     newActive(interpret) {
-      console.log(interpret);
+      // console.log(interpret);
       let result = this.playlists.find((obj) => {
         return obj.active === true;
       });
@@ -60,7 +61,7 @@ export default {
             this.playlists.sort((a, b) => a.title.localeCompare(b.title));
             this.playlists[0].active = true;
             this.emitter.emit("activeInterpret", this.playlists[0]);
-            console.log(this.playlists);
+            // console.log(this.playlists);
           }
         })
         .catch((error) => {
@@ -71,7 +72,7 @@ export default {
   mounted() {
     axios
       .get(
-        `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCQnju4UrTI_MN14nEtjxrjA&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+        `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCQnju4UrTI_MN14nEtjxrjA&key=${config.key}`
       )
       .then((response) => {
         // console.log(response.data);

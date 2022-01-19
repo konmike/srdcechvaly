@@ -19,6 +19,7 @@
 import axios from "axios";
 import Box from "@/components/Box";
 import Card from "@/components/Card.vue";
+import config from "/config";
 
 export default {
   components: {
@@ -59,7 +60,7 @@ export default {
   mounted() {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UUQnju4UrTI_MN14nEtjxrjA&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E&part=snippet&order=date&maxResults=7`
+        `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UUQnju4UrTI_MN14nEtjxrjA&key=${config.key}&part=snippet&order=date&maxResults=7`
       )
       .then((response) => {
         // console.log(response.data);

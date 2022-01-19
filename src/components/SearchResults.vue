@@ -1,5 +1,4 @@
 <template>
-  <!-- <transition name="fade"> -->
   <box :dataCounter="results.length" :class="[{ overflow: isAfter }]">
     <header class="header header--search-results">
       <h3 class="title title--transparent">Hledáte:</h3>
@@ -14,13 +13,13 @@
       </li>
     </ul>
   </box>
-  <!-- </transition> -->
 </template>
 
 <script>
 import axios from "axios";
 import Box from "@/components/Box";
 import Card from "@/components/Card";
+import config from "/config";
 export default {
   components: {
     Box,
@@ -60,7 +59,7 @@ export default {
 
       axios
         .get(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCQnju4UrTI_MN14nEtjxrjA&maxResults=20&order=date&q=${this.query}&type=video&key=AIzaSyBDHrY2FBFcdwk0OStWbBW4pYjT6cJKj3E`
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCQnju4UrTI_MN14nEtjxrjA&maxResults=20&order=date&q=${this.query}&type=video&key=${config.key}`
         )
         .then((response) => {
           let res = response.data.items;
