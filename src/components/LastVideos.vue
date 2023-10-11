@@ -63,10 +63,12 @@ export default {
         `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UUQnju4UrTI_MN14nEtjxrjA&key=${config.key}&part=snippet&order=date&maxResults=7`
       )
       .then((response) => {
-        // console.log(response.data);
-
         response.data.items.forEach((item) => {
-          if (!item.snippet.description.includes("#cztitulky")) return;
+          if (
+            !item.snippet.description.includes("#cztitulky") ||
+            item.snippet.title.includes("#shorts")
+          )
+            return;
           this.createCard(item);
         });
       })
